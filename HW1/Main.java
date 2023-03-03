@@ -7,9 +7,9 @@ public class Main {
         Pyramid.Output();
 
         // Create an instance of the Adlibs class and call the story method (see Adlibs.java for more info)
-        Adlibs.story("James", 22, "Red");
+        Adlibs.story("Mikael", 18, "black");
 
         // Create an instance of the Replace class and call the c "harReplace method (see Replace.java for more info)
-
+        Replace.charReplace("I MAKE BREAD", 2, 'T');
     }
 }
