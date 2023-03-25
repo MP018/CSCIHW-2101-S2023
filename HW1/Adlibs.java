@@ -6,7 +6,8 @@ package HW1;
 //        color is ___"
 public class Adlibs {
     public static String story(String name, int age, String favoriteColor) {
-        System.out.println(name + " threw " + age + " objects through the " + favoriteColor +" portal of randomness.");
-        return null;
+        String adlibstory = (name + " threw " + age + " objects through the " + favoriteColor +" portal of randomness.");
+        System.out.println(adlibstory);
+        return adlibstory;
     }
 }
