@@ -21,12 +21,14 @@ public class MathGames {
         //call tip per person
         System.out.println("What is the total bill:");
         double total = input.nextDouble();
-        System.out.println("What is the tip percentage (whole number):");
-        double tip = input.nextDouble();
         System.out.println("How many people are splitting the bill:");
         int people = input.nextInt();
+        System.out.println("What is the tip percentage (whole number):");
+        double tip = input.nextDouble();
         
-        double perPerson = billing(total, tip, people);
+        billing(total, people, tip);
+    
+        input.close();
     }
 
     public static double pythagorean(double a, double b) {
@@ -59,7 +61,7 @@ public class MathGames {
         return letterGrade;
 }
 
-    public static double billing(double total, double tip, int people){
+    public static double billing(double total, int people, double tip){
         double tipAmount = total * (tip/100);
         double totalAmount = Math.ceil(total + tipAmount);
         double perPerson = Math.ceil(totalAmount/people);
