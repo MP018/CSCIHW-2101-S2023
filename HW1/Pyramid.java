@@ -15,7 +15,7 @@ Hint2: Also notice the method is void meaning you will not be returning anything
 Hint3: The print statement is System.out.println();
 */
 public class Pyramid {
-    public static void Output() {
+    public void Output() {
         System.out.println("#");
         System.out.println("##");
         System.out.println("###");

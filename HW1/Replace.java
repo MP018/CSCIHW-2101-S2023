@@ -8,9 +8,8 @@ package HW1;
 // HELLO
 // 01234
 public class Replace {
-    public static String charReplace(String s, int x, char z) {
+    public String charReplace(String s, int x, char z) {
         String modifiedS = s.substring(0, x) + z + s.substring(x + 1);
-        System.out.println(modifiedS);
         return modifiedS;
 
     }
