@@ -151,16 +151,17 @@ public class BankAccount {
                 double principal = input.nextDouble();
                 System.out.println("Please enter the number of years you would like to save for: ");
                 int years = input.nextInt();
+                input.nextLine();
+
                 System.out.println("Please enter the type of interest you would like to use (compound (APY0.001)/simple (0.001). Please type either c or s): ");
-                String interest = input.nextLine();
+                String interestChoice = input.nextLine();
                 
-                if (interest.equalsIgnoreCase("c")){
+                if (interestChoice.equalsIgnoreCase("c")){
                     compoundInterest(principal, years, 0.0001, 4);
-                } else if (interest.equalsIgnoreCase("s")){
+                } 
+                else if (interestChoice.equalsIgnoreCase("s")){
                     simpleInterest(principal, 0.001, years);
-                } else {
-                    System.out.println("Invalid choice");
-                }
+                } 
 
             } else {
                 System.out.println("No savings account created");
@@ -209,7 +210,7 @@ public class BankAccount {
         // use that choice and run the method associated with that choice
 
         if (choice == 1) {
-            System.out.println("Please enter the amount you would like to deposit. If you have more than $10,000 you are eligible for a savings account: ");
+            System.out.println("Please enter the amount you would like to deposit. If you have more than $10,000 you are eligible for a savings: ");
             double amount = input.nextDouble();
             account.deposit(amount);
             account.printBalance();
@@ -257,7 +258,7 @@ public class BankAccount {
     }
 
     //simple interest
-    public void simpleInterest(double principal, double rate, int time){
+    public double simpleInterest(double principal, double rate, int time){
         double amount = principal * (1 + (rate * time));
         double roundedAmount = Math.round(amount * 100.0) / 100.0;
         double simpleinterest = amount - principal; // A-P
@@ -268,6 +269,7 @@ public class BankAccount {
         System.out.println("Simple Interest after " + time + " years is: $" + simpleinterest);
         System.out.println("Total Amount after " + time + " years is: $" + roundedAmount);
     
+        return simpleinterest;
     }
 
     // Create a method that will calculate the interest on the balance using
