@@ -7,6 +7,11 @@ import java.util.Scanner;
 
 public class ArrayListPlayground {
     public static void main(String[] args) {
+        nums();
+        week();
+        matrix();
+
+    }
 
     // Question 1
     // Write Java statements that do the following:
@@ -17,20 +22,28 @@ public class ArrayListPlayground {
     // d) set the value of the 2nd element to 6
     // d) Set the value of the 9th element of the array nums to the sum of the 13th and 2nd elements of the array nums.
 
+    public static void nums() {
         ArrayList<Integer> nums = new ArrayList<Integer>();
+        for (int i = 0; i <= 15; i++) {
+            nums.add(i);
+        }
+
         System.out.println(nums.get(9));
         nums.set(4, 99);
         nums.set(12, 15);
         nums.set(1, 6);
         nums.set(8, nums.get(12) + nums.get(1));
-    
 
+        System.out.println(nums);
+    
+    }
     // Question 2
     // a) create an arrayList of Strings that contain each day of the week.(starting on monday)
     // b) output each of the days of the week
     // c) output the days of the week that we have class 
     // d) change the arrayList to start on Sunday
 
+    public static void week() {
         ArrayList<String> days = new ArrayList<String>();
         days.add("Monday");
         days.add("Tuesday");
@@ -44,29 +57,15 @@ public class ArrayListPlayground {
             System.out.println(day);
         }
 
-        //If when most people have school
-        for (String schoolDay: days.subList(0, 5)) {
-            System.out.println(schoolDay);
-        }
-
         //If when only have Programming and Problem Solving 1 Class
-        for (String schoolDay: days.subList(0, 5)) {        
+        System.out.println("When we have class: " + days.get(1) + " and " + days.get(3));
 
-            if (days.get(1).equals("Tuesday")) {
-                System.out.println("Tuesday");
-            }
-
-            if (days.get(1).equals("Thursday")) {
-                System.out.println("Thursday");
-            }
-        }
-
-        String s = days.get(-1);
+        String s = "Sunday";
         days.remove(days.size() - 1);
         days.add(0, s);
         System.out.println(days);
 
-
+    }
 
     // Question 3 
     // a) create an ArrayList and prompt the user for numbers to add to it until the number 0 is selected
@@ -95,7 +94,7 @@ public class ArrayListPlayground {
     //         }
     //     }
 
-        
+    public static void matrix() {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         Scanner input = new Scanner(System.in);
         int num = 1;
@@ -137,8 +136,7 @@ public class ArrayListPlayground {
             }
         }
         
-   
-
+    
 }
 }  
 
