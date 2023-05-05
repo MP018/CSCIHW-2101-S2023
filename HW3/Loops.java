@@ -23,20 +23,29 @@ public class Loops {
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'e') {
                 count++;
-            }
-            
-        }
 
-        return true; // <- this should be changed 
+                if (count > 3) {
+                    boolean result = false;
+                    
+                }
+            }     
+        }
+        boolean result = count >= 1 && count <= 3; // <- this should be changed 
+        System.out.println(result);
+            
+        return result;
+        
+    
     }
 
 
-    
+
     //Given a String str and int n return a larger string
     //that is n copies of the original string 
     //Ex.
     //stringTimes("Code",2) ->"CodeCode"
     //stringTimes("Code",4) ->"CodeCodeCodeCode"
+
     public static String stringTimes(String str, int n) {
         
         StringBuilder sb = new StringBuilder();
@@ -45,8 +54,10 @@ public class Loops {
             sb.append(str);
     
         }
-        
-        return sb.toString(); // <- this should be changed 
+        String resultStringTimes = sb.toString();
+        System.out.println(resultStringTimes);
+        return resultStringTimes;
+        //return sb.toString(); // <- this should be changed 
     } 
 
 
@@ -62,11 +73,11 @@ public class Loops {
     public static String stringZ(String str){
         char[] charArray = str.toCharArray();
 
-        for (int i = 0; i < charArray.length -1; i++) {
-            if (charArray[i] == 'z' && i != 0 && i != charArray.length -1) {
-                charArray[i] = ' ';
+        for (int i = 1; i < charArray.length -1; i++) {
+            if (charArray[i] == 'z' && charArray[i + 1] != '\0' && i != 1) {
+                charArray[i] = '\0';
             }
-            //code here
+
         }
 
         String result = new String(charArray);
@@ -101,6 +112,7 @@ public class Loops {
     // The total so far is 27.
     // Number: 0
     // TOTAL ENDED --- The total is 27.
+    
     public static void sums(){
         Scanner scanner = new Scanner(System.in);
 
@@ -117,12 +129,20 @@ public class Loops {
         }
 
         System.out.println("TOTAL ENDED --- The total is " + sum + ".");
+
+        scanner.close();
     }
 
     public static void main(String[] args) {
         loopE("eat");
+        loopE("eeat");
+        loopE("eeeat");
+        loopE("eeeeat");
         stringTimes("Code",2);
+        stringTimes("Code",4);
         stringZ("zHelloz");
+        stringZ("nozthaznks");
+        stringZ("xksiazdjaasldzsajzasdz");
         sums();
 
         // Add code to help test your methods here
