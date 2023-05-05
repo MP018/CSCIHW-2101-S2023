@@ -27,14 +27,21 @@ public class ArrayListPlayground {
         for (int i = 0; i <= 15; i++) {
             nums.add(i);
         }
+        System.out.println("Array List 15 numbers: "+ nums);
 
         System.out.println(nums.get(9));
-        nums.set(4, 99);
-        nums.set(12, 15);
-        nums.set(1, 6);
-        nums.set(8, nums.get(12) + nums.get(1));
 
-        System.out.println(nums);
+        nums.set(4, 99);
+        System.out.println("Set value of 5th element to 99: "+nums);
+
+        nums.set(12, 15);
+        System.out.println("Set value of 13th element to 15: "+nums);
+
+        nums.set(1, 6);
+        System.out.println("Set value of 2nd element to 6: "+nums);
+
+        nums.set(8, nums.get(12) + nums.get(1));
+        System.out.println("Set the value of the 9th element of the array nums to the sum of the 13th and 2nd elements of the array nums: "+nums);
     
     }
     // Question 2
@@ -63,7 +70,7 @@ public class ArrayListPlayground {
         String s = "Sunday";
         days.remove(days.size() - 1);
         days.add(0, s);
-        System.out.println(days);
+        System.out.println("Sunday is now the start of the week: " + days);
 
     }
 
