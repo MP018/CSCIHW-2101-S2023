@@ -111,7 +111,7 @@ public class ArrayListPlayground {
             numbers.add(num);
         }
         numbers.remove(numbers.size() - 1);
-        System.out.println(numbers);
+        System.out.println("Array List: " + numbers);
 
         int largest = numbers.get(0);
         int smallest = numbers.get(0);
@@ -127,7 +127,7 @@ public class ArrayListPlayground {
         System.out.println("Smallest: " + smallest);
 
         Collections.sort(numbers);
-        System.out.println(numbers);
+        System.out.println("Array List Sorted: " + numbers);
 
         while (numbers.size() % 3 != 0) {
             System.out.println("Please enter a number to add to the ArrayList to make it divisable by 3: ");
