@@ -136,6 +136,7 @@ public class BankAccount {
     public static void transferMoney(BankAccount acount1, BankAccount acount2, double amount) {
         acount1.withdraw(amount);
         acount2.deposit(amount);
+        System.out.println("Transfer complete. You have transferred $" + amount + " to " + acount2.name + "'s account.");
     }
 
 
@@ -226,8 +227,6 @@ public class BankAccount {
         else if (choice == 3){
             System.out.println("How much would you like to transfer?");
             double amount = input.nextDouble();
-            System.out.println("Please enter the name of the person you would like to transfer money to: ");
-            String name = input.nextLine();
             transferMoney(account, account2, amount);
         }
     
