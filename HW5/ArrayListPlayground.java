@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class ArrayListPlayground {
     public static void main(String[] args) {
+
     // Question 1
     // Write Java statements that do the following:
     // a) Declare an arrayList nums of 15 elements of type int.
@@ -15,15 +16,56 @@ public class ArrayListPlayground {
     // d) set the value of the 13th element to 15
     // d) set the value of the 2nd element to 6
     // d) Set the value of the 9th element of the array nums to the sum of the 13th and 2nd elements of the array nums.
+
+        ArrayList<Integer> nums = new ArrayList<Integer>();
+        System.out.println(nums.get(9));
+        nums.set(4, 99);
+        nums.set(12, 15);
+        nums.set(1, 6);
+        nums.set(8, nums.get(12) + nums.get(1));
     
 
-
-         
     // Question 2
     // a) create an arrayList of Strings that contain each day of the week.(starting on monday)
     // b) output each of the days of the week
     // c) output the days of the week that we have class 
     // d) change the arrayList to start on Sunday
+
+        ArrayList<String> days = new ArrayList<String>();
+        days.add("Monday");
+        days.add("Tuesday");
+        days.add("Wednesday");
+        days.add("Thursday");
+        days.add("Friday");
+        days.add("Saturday");
+        days.add("Sunday");
+
+        for (String day : days) {
+            System.out.println(day);
+        }
+
+        //If when most people have school
+        for (String schoolDay: days.subList(0, 5)) {
+            System.out.println(schoolDay);
+        }
+
+        //If when only have Programming and Problem Solving 1 Class
+        for (String schoolDay: days.subList(0, 5)) {        
+
+            if (days.get(1).equals("Tuesday")) {
+                System.out.println("Tuesday");
+            }
+
+            if (days.get(1).equals("Thursday")) {
+                System.out.println("Thursday");
+            }
+        }
+
+        String s = days.get(-1);
+        days.remove(days.size() - 1);
+        days.add(0, s);
+        System.out.println(days);
+
 
 
     // Question 3 
@@ -52,14 +94,51 @@ public class ArrayListPlayground {
     //             System.out.println();
     //         }
     //     }
+
+        
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        Scanner input = new Scanner(System.in);
+        int num = 1;
+        while (num != 0) {
+            System.out.println("Please enter a number to add to the ArrayList or enter 0 to stop adding numbers: ");
+            num = input.nextInt();
+            numbers.add(num);
+        }
+        numbers.remove(numbers.size() - 1);
+        System.out.println(numbers);
+
+        int largest = numbers.get(0);
+        int smallest = numbers.get(0);
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) > largest) {
+                largest = numbers.get(i);
+            }
+            if (numbers.get(i) < smallest) {
+                smallest = numbers.get(i);
+            }
+        }
+        System.out.println("Largest: " + largest);
+        System.out.println("Smallest: " + smallest);
+
+        Collections.sort(numbers);
+        System.out.println(numbers);
+
+        while (numbers.size() % 3 != 0) {
+            System.out.println("Please enter a number to add to the ArrayList to make it divisable by 3: ");
+            num = input.nextInt();
+            numbers.add(num);
+        }
+        System.out.println(numbers);
+
+        for (int i = 0; i < numbers.size(); i++) {
+            System.out.print(numbers.get(i) + " ");
+            if ((i + 1) % 3 == 0) {
+                System.out.println();
+            }
+        }
         
    
 
 }
-
-
-
-
-
-   
+}  
 
