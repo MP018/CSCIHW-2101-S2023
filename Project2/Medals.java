@@ -131,7 +131,7 @@ public class Medals {
         // print the Array list and chart to look like this
         // Gold    Silver    Bronze
         // 4       4         5
-     
+
     }
     
 }
